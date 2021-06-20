@@ -1,14 +1,25 @@
+# 나의 풀이
 def solution(clothes):
-    dict = {}
+    cloth_dict = {}
     
     for cloth in clothes:
         cloth_type = cloth[1]
-        if cloth_type in dict:
-            dict[cloth_type] += 1
+        print(cloth_type)
+        if cloth_type in cloth_dict:
+            cloth_dict[cloth_type] += 1
         else:
-            dict[cloth_type] = 0
+            cloth_dict[cloth_type] = 1
     
-    n_cloth_type = len(dict)
-    typesize_list = []
-    for cloth_type, num in dict:
-        typesize_list.add(num)
+    answer = 1
+    for cloth_type in cloth_dict:
+        answer *= (cloth_dict[cloth_type]+1)
+    answer -= 1
+    
+    return answer
+        
+# 다른 풀이 1
+import collections
+from functools import reduce
+
+def solution(c):
+    return reduce(lambda x,y:x*y,[a+1 for a in collections.Counter([x[1] for x in c]).values()])-1
