@@ -1,1 +1,14 @@
-
+def solution(clothes):
+    dict = {}
+    
+    for cloth in clothes:
+        cloth_type = cloth[1]
+        if cloth_type in dict:
+            dict[cloth_type] += 1
+        else:
+            dict[cloth_type] = 0
+    
+    n_cloth_type = len(dict)
+    typesize_list = []
+    for cloth_type, num in dict:
+        typesize_list.add(num)
