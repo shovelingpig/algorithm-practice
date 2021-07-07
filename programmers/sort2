@@ -1,1 +1,8 @@
+# 나의 풀이
+def solution(numbers):
+    if all([n == 0 for n in numbers]):
+        return "0"
+    return ''.join(sorted([str(n) for n in numbers], key=lambda s:s*3, reverse=True))
 
+# 한줄평
+numbers의 모든 숫자가 0인 경우가 핵심 코너 케이스였다. 이때 0000...이 아닌 0을 리턴했어야 하는데 이를 생각하는데 시간이 오래 걸렸다.
