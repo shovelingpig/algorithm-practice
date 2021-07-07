@@ -21,7 +21,8 @@ def solution(progresses, speeds):
     answer.append(len(stack))
     
     return answer
-    
+
+
 # 다른 풀이 1
 def solution(progresses, speeds):
     Q=[]
@@ -31,6 +32,10 @@ def solution(progresses, speeds):
         else:
             Q[-1][1]+=1
     return [q[1] for q in Q]
+
+# 한줄평
+-((p-100)//s)와 같이 음수의 내림을 이용해 양수의 올림을 구현함으로써 math.ceil()과 같은 외부 라이브러리를 이용하지 않은 점이 인상깊었다.
+
     
 # 다른 풀이 2
 def solution(progresses, speeds):
@@ -51,3 +56,6 @@ def solution(progresses, speeds):
             time += 1
     answer.append(count)
     return answer
+
+# 한줄평
+문제에서 제시된 상황을 가장 잘 이해하고 구현한 코드였고, 그렇기 때문에 자연스럽게 가독성이 높았다.
