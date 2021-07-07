@@ -29,4 +29,4 @@ def solution(numbers):
     return answer
 
 # 한줄평
-number가 100보다 작다는 제약조건을 이용하지 않고 풀 수 있는 comparator를 사용한 가장 정석적인 풀이이다.
+number가 100보다 작다는 제약조건을 이용하지 않고 풀 수 있는 comparator를 사용한 가장 정석적인 풀이이다. 두 원소의 우선순위를 비교할 때 a+b와 b+a를 비교한 점이 인상깊었다.
