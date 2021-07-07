@@ -16,10 +16,13 @@ def solution(clothes):
     answer -= 1
     
     return answer
-        
+     
+     
 # 다른 풀이 1
 import collections
 from functools import reduce
 
 def solution(c):
     return reduce(lambda x,y:x*y,[a+1 for a in collections.Counter([x[1] for x in c]).values()])-1
+
+# 가장 Pythonic한 한줄짜리 코드였던 것 같다. Python의 lambda 함수와 list comprehension을 이용하면 코드를 굉장히 짧게 만들 수 있는 것 같다. 하지만 가독성 좋은 것은 아닌 것 같다. 
