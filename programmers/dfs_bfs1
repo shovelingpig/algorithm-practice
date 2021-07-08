@@ -45,4 +45,4 @@ def solution(numbers, target):
         return solution(numbers[1:], target-numbers[0]) + solution(numbers[1:], target+numbers[0])
  
  # 한줄평
- 분할정복을 사용한 점이 인상깊었다. 재귀적으로 굉장히 아름다운 코드인 것 같다. 재귀 함수를 따로 만들지 않고 solution 함수 자체를 활용했고, 종료 조건을 잘 명시했다.
+ 분할정복을 사용한 점이 인상깊었다. list slicing을 하면 새로운 배열 객체가 만들어진다는 것을 새롭게 알았다. 재귀적으로 굉장히 아름다운 코드인 것 같다. 재귀 함수를 따로 만들지 않고 solution 함수 자체를 활용했고 종료 조건을 잘 명시했다.
