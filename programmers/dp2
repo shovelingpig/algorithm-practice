@@ -1,1 +1,18 @@
 # 나의 풀이
+MAX = 0
+
+def solution(triangle):
+    
+    def dfs(layer, order, result):
+        global MAX
+        result += triangle[layer][order]            
+        if layer == len(triangle) - 1:
+            if result > MAX:
+                MAX = result
+            return
+        for next_order in range(order, order+2):
+            dfs(layer+1, next_order, result)
+            
+    global MAX
+    dfs(0, 0, 0)
+    return MAX
