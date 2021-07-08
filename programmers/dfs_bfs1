@@ -46,3 +46,14 @@ def solution(numbers, target):
  
  # 한줄평
  분할정복을 사용한 점이 인상깊었다. list slicing을 하면 새로운 배열 객체가 만들어진다는 것을 새롭게 알았다. 재귀적으로 굉장히 아름다운 코드인 것 같다. 재귀 함수를 따로 만들지 않고 solution 함수 자체를 활용했고 종료 조건을 잘 명시했다.
+
+
+# 다른 풀이 2
+from itertools import product
+def solution(numbers, target):
+    l = [(x, -x) for x in numbers]
+    s = list(map(sum, product(*l)))
+    return s.count(target)
+    
+# 한줄평
+재귀를 사용하지 않은 방법 중 제일 Pythonic한 것 같다. (x, -x) 쌍을 뽑아서 itertools 라이브러리의 product 연산을 취해주는 것이 정말 아름다운 방법이라고 생각했다.
