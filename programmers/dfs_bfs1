@@ -1,0 +1,35 @@
+# 나의 풀이
+ANSWER = 0
+TARGET = 0
+
+def recursive(numbers, opr, result):
+    numbers = numbers.copy()
+    
+    if opr == '+':
+        result += numbers.pop()
+    elif opr == '-':
+        result -= numbers.pop()
+    
+    if numbers:
+        recursive(numbers, '+', result)
+        recursive(numbers, '-', result)
+    else:
+        global ANSWER
+        global TARGET
+        
+        if result == TARGET:
+            ANSWER += 1
+
+def solution(numbers, target):
+    global ANSWER
+    global TARGET
+    
+    TARGET = target
+    
+    recursive(numbers, '+', 0)
+    recursive(numbers, '-', 0)
+    
+    return ANSWER
+    
+# 한줄평
+재귀함수를 이용해 DFS를 구현했다. 다음에는 stack 자료구조를 활용해 구현해보고 싶다. python의 global variable 개념을 제대로 알게 된 좋은 기회였다.
