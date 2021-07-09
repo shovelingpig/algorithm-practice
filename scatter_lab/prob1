@@ -1,0 +1,102 @@
+from enum import Enum
+
+class DayOfWeek(Enum):
+    MONDAY = 0
+    TUESDAY = 1
+    WEDNESDAY = 2
+    THURSDAY = 3
+    FRIDAY = 4
+    SATURDAY = 5
+    SUNDAY = 6
+
+class Sky(Enum):
+    SUNNY = 1
+    LITTLE_CLOUD = 2
+    MANY_CLOUD = 3
+    CLOUDY = 4
+
+class Water(Enum):
+    NONE = 0
+    RAIN = 1
+    SNOW = 2
+
+def temparature_score(t):
+    return 20 - abs(22 - t)
+
+def weather_score(sky, water):
+    score = -1
+    
+    if Water(water) == Water.RAIN:
+        score = 5
+    elif Sky(sky) == Sky.CLOUDY:
+        score = 10
+    elif Water(water) == Water.SNOW:
+        score = 14
+    elif Sky(sky) == Sky.MANY_CLOUD:
+        score = 17
+    elif Sky(sky) == Sky.SUNNY or Sky(sky) == Sky.LITTLE_CLOUD:
+        score = 20
+    
+    if score == -1:
+        print("ValueError: There is an invalid argument in weather_socore().")
+
+    return score
+
+def day_score(day):
+    score = -1
+    
+    if DayOfWeek(day) == DayOfWeek.SATURDAY:
+        score = 6
+    elif DayOfWeek(day) == DayOfWeek.FRIDAY:
+        score = 5
+    elif DayOfWeek(day) == DayOfWeek.SUNDAY:
+        score = 4
+    elif DayOfWeek(day) == DayOfWeek.WEDNESDAY:
+        score = 3
+    elif DayOfWeek(day) == DayOfWeek.THURSDAY:
+        score = 2
+    elif DayOfWeek(day) == DayOfWeek.TUESDAY:
+        score = 1
+    elif DayOfWeek(day) == DayOfWeek.MONDAY:
+        score = 0
+    
+    if score == -1:
+        print("ValueError: There is an invalid argument in day_socore().")
+        
+    return score
+
+def is_worst_day(day_info):
+    sky = day_info[0]
+    water = day_info[1]
+    temparature = day_info[2]
+    
+    if Sky(sky) == Sky.CLOUDY or Water(water) == Water.RAIN:
+        return True
+    elif temparature >= 30:
+        return True
+    elif temparature <= 0:
+        return True
+    
+    return False
+    
+def solution(data):
+    total_scores = []  # [(day, (total_score, day_score)), ...]
+    
+    for day, day_info in enumerate(data):
+        sky = day_info[0]
+        water = day_info[1]
+        temparature = day_info[2]
+        total_score = temparature_score(temparature) + weather_score(sky, water)
+        total_scores.append( (day, ( total_score, day_score(day) ) ) )
+        
+    total_scores.sort(key=lambda x: x[1], reverse=True) # desc order
+    best_day = total_scores[0][0]
+    worst_day = -1
+    
+    for i in reversed(range(len(total_scores))):
+        day = total_scores[i][0]
+        if is_worst_day(data[day]):
+            worst_day = day
+            break
+    
+    return [best_day, worst_day]
