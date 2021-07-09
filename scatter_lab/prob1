@@ -1,3 +1,4 @@
+# 나의 
 from enum import Enum
 
 class DayOfWeek(Enum):
@@ -100,3 +101,9 @@ def solution(data):
             break
     
     return [best_day, worst_day]
+    
+# 회고
+- Enum Class를 사용하여 가독성과 유지보수의 편의성을 높였다.
+- 함수를 통해 전체적인 풀이를 적절히 추상화하여 알고리즘의 구조를 명확하게 드러냈다.
+- tuple 자료구조를 활용함으로써 여러 기준에 따라 정렬하는 기능을 간단하게 구현했다.
+- 예외처리를 통해 디버깅을 더욱 쉽게 만들었다.
