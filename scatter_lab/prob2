@@ -1,0 +1,23 @@
+def solution(C, F, X):
+    """
+    Args:
+        C: cost per staff
+        F: production per minute per staff
+        X: target production
+    """
+    
+    n = 1  # number of staff
+    
+    prev_t = 0
+    prev_result = X / 2
+    while True:
+        next_t = prev_t + ( C / (2 + (n-1)*F) )
+        next_result = next_t + ( X / (2 + n*F) )
+        
+        if prev_result <= next_result:
+            return round(prev_result, 6)
+        
+        else:
+            prev_t = next_t
+            prev_result = next_result
+            n += 1
