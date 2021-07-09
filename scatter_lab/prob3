@@ -1,3 +1,4 @@
+# 나의 풀이
 def solution(N, M):
     """
     Args:
@@ -13,9 +14,9 @@ def solution(N, M):
             for j in range(2*i, N, i):
                 is_prime[j] = False
     
-    # calculate subtotals
     primes = [n for n, p in enumerate(is_prime) if p and n >= 2]
     
+    # calculate subtotals
     sum_of_primes = [0] * (len(primes) + 1)
     for i in range(len(primes)):
         sum_of_primes[i+1] = sum_of_primes[i] + primes[i]
@@ -38,3 +39,8 @@ def solution(N, M):
                 start += 1
     
     return count
+    
+# 회고
+- 먼저 에라토스테네스의 체 알고리즘을 사용하여 N 이하의 소수들을 모두 구한다.
+- 다음으로 첫번째 소수부터 i번째 소수까지의 모든 연속된 부분합을 구한다.
+- 마지막으로 투포인터를 이용해서 두 부분합의 차가 M인 경우의 수를 모두 구한다.
