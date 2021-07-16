@@ -1,4 +1,4 @@
-# 나의 
+# 나의 풀이
 from enum import Enum
 
 class DayOfWeek(Enum):
