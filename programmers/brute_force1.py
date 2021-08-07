@@ -42,4 +42,4 @@ def solution(answers):
     return [i + 1 for i, v in enumerate(scores) if v == highest]
     
 # 한줄평
-itertools 라이브러리의 cycle 함수를 새롭게 알게 되었다. 최종 결과값을 만들 때 list comprehension을 쓴 것도 좋은 선택 같다.
+# itertools 라이브러리의 cycle 함수를 새롭게 알게 되었다. 최종 결과값을 만들 때 list comprehension을 쓴 것도 좋은 선택 같다.
