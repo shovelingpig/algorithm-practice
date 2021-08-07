@@ -37,8 +37,10 @@ def solution(begin, target, words):
     
     return ANSWER
 
+"""
 # 한줄평
-global varible을 안 쓰고 재귀 구조를 더 깔끔하게 구현했으면 좋았지 싶다.
+- global varible을 안 쓰고 재귀 구조를 더 깔끔하게 구현했으면 좋았지 싶다.
+"""
 
 
 # 다른 풀이 1
@@ -71,8 +73,10 @@ def solution(begin, target, words):
 
     return dist.get(target, 0)
 
+"""
 # 한줄평
-queue 자료구조를 활용해 최단거리를 구하는 알고리즘을 사용하였다. get_adjacent 함수를 따로 구현한 것이 좋은 추상화의 예인 것 같다. yield 함수를 이용해 generator를 만들 수 있다는 사실을 처음 알았다.
+- queue 자료구조를 활용해 최단거리를 구하는 알고리즘을 사용하였다. get_adjacent 함수를 따로 구현한 것이 좋은 추상화의 예인 것 같다. yield 함수를 이용해 generator를 만들 수 있다는 사실을 처음 알았다.
+"""
 
 
 # 다른 풀이 2
@@ -95,7 +99,8 @@ def solution(begin, target, words):
         Q = temp_Q
         answer += 1
  
+"""
  # 한줄평
- 이 풀이는 queue 자료구조를 가장 잘 활용한 풀이 같았다. word_1이 현재 관심의 대상인 단어이고, word_2는 다음 관심의 대상이 될 단어이다. zip() 함수와 list comprehension을 이용해 가독성을 높인 점도 인상깊었다.
-        
+ - 이 풀이는 queue 자료구조를 가장 잘 활용한 풀이 같았다. word_1이 현재 관심의 대상인 단어이고, word_2는 다음 관심의 대상이 될 단어이다. zip() 함수와 list comprehension을 이용해 가독성을 높인 점도 인상깊었다.
+"""     
         
