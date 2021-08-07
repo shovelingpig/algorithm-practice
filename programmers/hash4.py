@@ -40,8 +40,10 @@ def solution(genres, plays):
         answer += temp[:min(len(temp),2)]
     return answer
 
+"""
 # 한줄평
-list comprehension으로 dictionary도 간편히 만들 수 있다는 것을 알게 되었다. 또한 sorted 함수의 key로 전달되는 lambda 함수에서 tuple을 return하면 앞에 위치한 순서대로 정렬이 된다는 것을 알게 되었다.
+- list comprehension으로 dictionary도 간편히 만들 수 있다는 것을 알게 되었다. 또한 sorted 함수의 key로 전달되는 lambda 함수에서 tuple을 return하면 앞에 위치한 순서대로 정렬이 된다는 것을 알게 되었다.
+"""
 
     
 # 다른 풀이 2
@@ -88,6 +90,7 @@ class album:
     def __ne__(self, other):
         return self.play != other.play
 
+"""
 # 한줄평
-Pythion에서도 class를 선언하여 활용하면 가독성이 높게 구현할 수 있다는 사실을 깨달았다.
-
+- Pythion에서도 class를 선언하여 활용하면 가독성이 높게 구현할 수 있다는 사실을 깨달았다.
+"""
