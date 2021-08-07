@@ -46,9 +46,11 @@ def solution(priorities, location):
 
     return array1.index(location) + 1
 
+"""
 # 한줄평
-index의 위치를 저장하는 배열을 따로 만들고, array.append(array.pop(i))와 같이 이를 관리해주는 방식이 인상깊었다.
-    
+- index의 위치를 저장하는 배열을 따로 만들고, array.append(array.pop(i))와 같이 이를 관리해주는 방식이 인상깊었다.
+"""
+
     
 # 다른 풀이 2
 def solution(priorities, location):
@@ -81,5 +83,7 @@ def solution(priorities, location):
             if cur[0] == location:
                 return answer
 
+"""
 # 한줄평
-enumerate 함수를 이용해 index와 value를 묶은 tuple을 만들어 index를 관리하는 점이 인상깊었다. 또한 stack과 queue를 구현할 때 list보다 훨씬 효율적인 deque라는 자료구조를 알게 되었다.
+- enumerate 함수를 이용해 index와 value를 묶은 tuple을 만들어 index를 관리하는 점이 인상깊었다. 또한 stack과 queue를 구현할 때 list보다 훨씬 효율적인 deque라는 자료구조를 알게 되었다.
+"""
