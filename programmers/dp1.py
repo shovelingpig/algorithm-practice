@@ -25,5 +25,7 @@ def solution(N, number):
 
     return answer
     
+"""
 # 한줄평
-Memoization 기법을 이용했고 작은 수부터 반복문을 돌아서 효율성을 최대화하려고 노력했다. zero division error에 대한 코너 케이스에 주의해줘야 할 것 같다.
+- Memoization 기법을 이용했고 작은 수부터 반복문을 돌아서 효율성을 최대화하려고 노력했다. zero division error에 대한 코너 케이스에 주의해줘야 할 것 같다.
+"""
