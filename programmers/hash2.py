@@ -24,8 +24,10 @@ def solution(phoneBook):
             return False
     return True
 
+"""
 # 한줄평
-list를 for in 문으로 순환할 때 list slicing을 적용하면 더 활용성이 높다는 것을 깨달았다.
+- list를 for in 문으로 순환할 때 list slicing을 적용하면 더 활용성이 높다는 것을 깨달았다.
+"""
 
 
 # 다른 풀이 2
@@ -38,8 +40,10 @@ def solution(phone_book):
                 return False
     return True
 
+"""
 # 한줄평
-시간복잡도 상 가장 효율적인 코드 같았다.
+- 시간복잡도 상 가장 효율적인 코드 같았다.
+"""
 
 
 # 다른 풀이 3
@@ -56,5 +60,7 @@ def solution(phone_book):
                 answer = False
     return answer
 
+"""
 # 한줄평
-hash 함수를 이용하라는 문제의 취지에 가장 적합한 풀이 같았다.
+- hash 함수를 이용하라는 문제의 취지에 가장 적합한 풀이 같았다.
+"""
