@@ -14,6 +14,11 @@ Solution1.
 4. N 미만의 n1과 n2의 최소공배수의 배수를 모두 answer에서 뺀다.
 '''
 
+def sumOfMultiples(num, end):
+    k = (end-1) // num
+    sum = int(k * (k+1) / 2) * num
+    return sum
+
 def getLCM(n1, n2):
     for i in range(max(n1, n2), (n1*n2)+1):
         if i%n1==0 and i%n2==0:
@@ -22,10 +27,10 @@ def getLCM(n1, n2):
 
 def calculate(N, n1, n2):
     result = 0
-    result += sum([i for i in range (n1, N, n1)])
-    result += sum([i for i in range (n2, N, n2)])
+    result += sumOfMultiples(n1, N)
+    result += sumOfMultiples(n2, N)
     lcm = getLCM(n1, n2)
-    result -= sum([i for i in range (lcm, N, lcm)])
+    result -= sumOfMultiples(lcm, N)
     return result
 
 answer = calculate(1000, 3, 5)
