@@ -22,7 +22,7 @@ Linear Data Structure
       Quick
       Heap
     Other
-      Bucket
+      Count
       Radix
   Binary Search
 
